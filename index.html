@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/SCSS/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Inter:500,600" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Flex:regular" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <title>ABrosko</title>
+</head>
+<body> 
+    <div id="particles-js"></div> 
+        <div class="container">
+            <header class="header">
+                <nav class="header__nav">
+                    <ul>
+                        <li>
+                            <a href="#">Главная</a>
+                        </li>
+                        <li>
+                            <a href="#news">Новости</a>
+                        </li>
+                        <li>
+                            <a href="#">Услуги</a>
+                        </li>
+                        <li class="button__portfolio" >
+                            <a href="#">Портфолио</a>
+                        </li>
+                        <li class="button__order-innernav">
+                            <a  href="#">Оформить заказ</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="menu__icon">
+                    <span></span>
+                 </div> 
+                <a href="#" class="header__logo">
+                    <span>A</span>Brosko
+                </a>
+                <a href="#" class="button__order">Оформить заказ</a>
+            </header>
+                  <section class="section__breef">
+                        <h1 class="section__breef-tille"><span>Бриф</span>-анкета</h1>
+                         <form action="#" class="breef__form" method="post" name="formbreef" enctype="multipart/form-data">
+                    <div class="breef__form-item">
+                        <label for="customer" class="form__item-title" >Заказчик:</label>
+                        <input tabindex="1" class="input__customer" type="text" id="customer" name="customername" value="" placeholder="Обязательно для заполнения*" > 
+                    </div>
+                     <div class="breef__form-item">
+                        <label for="activity" class="form__item-title" >Вид деятельности компании и <span>ЦА:</span></label>
+                        <textarea tabindex="2" class="textarea__activity" name="detailsactivity" id="activity"   placeholder="Обязательно для заполнения*"></textarea>
+                    </div>
+                                    <div class="contacts__customer">
+                        <label for="contactcustomer" class="form__item-title" >Контакты заказчика:</label>
+                        <div class="contacts__customer-item">
+                            <input tabindex="3" class="input__email" type="text" id="contactcustomer" name="customeremail" value="" placeholder="Email*" > 
+                            <input tabindex="4" class="input__tel" type="tel" id="contactcustomer" maxlength="11" name="customertel" value="" placeholder="Номер телефона" > 
+                        </div>
+                    </div>
+                             <div class="breef__form-options">
+                        <select tabindex="5" name="typofservices" class="form__options-select"  >
+                            <option value="" hidden disabled selected > Виды услуг</option>
+                            <option value="1">Вёрстка</option>
+                            <option value="2">Дизайн</option>
+                            <option value="3">Логотип</option>
+                            <option value="4">Копирайтинг</option>
+                            <option value="5">CMS</option>
+                        </select>
+                        <select tabindex="6" name="styleanimation" class="form__options-select " >
+                            <option value="" hidden disabled selected >Выбор стиля</option>
+                            <option value="1">Минимализм</option>
+                            <option value="2">Креатив</option>
+                            <option value="3">Анимации</option>
+                            <option value="4">Паралакс</option>
+                        </select>
+                        <select tabindex="7" name="levelanimation" class="form__options-select options-select-levelanimation" >
+                            <option value="" hidden disabled selected >Уровень анимаций</option>
+                            <option value="1">Простые</option>
+                            <option value="2">Средние</option>
+                            <option value="3">Сложные</option>
+                            <option value="4">Проф. уровень</option>
+                        </select>
+                        <div class="options-color"> Цвет
+                                <input tabindex="8" class="input__color" type="color" id="colorchoose" name="colorchoose" value="" >
+                            </select>
+                        </div>    
+                    </div>
+                            <div class="breef__form-bottom">
+                        <div class="breef__form-comment">
+                            <label for="breefcomment" class="form__item-title" >Комментарий к заказу:</label>
+                            <div class="counter-box">
+                                <textarea tabindex="9" maxlength="1000" class="textarea__comment" name="breefcomment" id="breefcomment"   placeholder="Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat."></textarea>
+                                <span class="counter-text">
+                                    <span class="counter-text__current">0</span>
+                                    /
+                                    <span class="counter-text__total">1000 Символов</span>
+                                </span>
+                            </div>    
+                        </div> 
+                        <div class="brief__form-attach">
+                            <label for="breefattach" class="form__item-title" >Закрепленные файлы:</label>
+                            <div class="input__attach">   
+                                <input class="input__attach-standart" type="file" id="breefattach" name="breefattach" multiple accept=".txt .pdf .word .png .jpg">
+                                <div class="file__button">Прикрепить файл +</div>
+                                <div class="file__expansion">*  txt, pdf, word, png, jpg</div>
+                            </div> 
+                            <div id="filepreview" class="file__preview"></div>
+                        </div>  
+                    </div>
+                </form>
+            </section>
+
+            <div id="popup" class="popup">
+                <div class="popup__body">
+                    <div class="popup__form">
+                        <div class="form__cancel">
+                            <img src="src/assets/img/popup/cross.svg" alt="cancel">
+                        </div>
+                        <form action="#"  id="form" class="form__body">
+                            <div class="form__title">Заполните форму</div>
+                            <div class="form__subtitle">И мы с вами свяжемся</div>
+                            <div class="form__input-body">
+                                <input id="formName" type="text" name="Name" class="form__input " placeholder="Имя" >
+                                <input id="formEmail" type="text" name="Email" class="form__input " placeholder="Input your Email" >
+                                <input id="formTel" type="text" name="Tel" class="form__input " placeholder="79507239485" >
+                                <textarea name="Message" id="formMessage" class="form__input" placeholder="Сообщение"></textarea>
+                            </div>    
+                            <button type="submit" class="form__button" >Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>  
+            <div id="alert" class="alert">
+                <div class="alert__body">
+                    <div class="alert__content">
+                        <div class="alert__cancel">
+                            <img src="src/assets/img/popup/cross.svg" alt="cancel">
+                        </div>
+                        <div class="alert__message">
+                            <div class="alert__message-title">На сайте ведутся технические работы</div>
+                            <div class="alert__message-subtitle">Приносим свои извинения!</div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      
+<script src="src/JS/burger.js"></script>
+<script src="src/JS/filepreview.js"></script>
+<script src="src/JS/countwords.js"></script>
+<script src="src/JS/click.js"></script>
+<script src="src/JS/popup.js"></script>
+<script src="src/JS/alert.js"></script>
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+<script src="src/JS/particles.js"></script>
+</body>
+</html>

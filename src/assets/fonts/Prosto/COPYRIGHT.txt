@@ -1,0 +1,1 @@
+Copyright (c) 2012 by Pavel Emelyanov and Jovanny Lemonad. All rights reserved.
