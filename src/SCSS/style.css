@@ -526,7 +526,7 @@ body {
   transition: all 0.3s ease 0s;
 }
 .dropdown__button::after {
-  content: url("/src/assets/img/select.png");
+  content: url("../assets/img/select.svg");
   position: absolute;
   width: 20px;
   height: 12.76px;
@@ -611,7 +611,7 @@ body {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-image: url("/src/assets/img/select.png");
+  background-image: url("../assets/img/select.svg");
   background-repeat: no-repeat;
   background-position: 155px 16.43px;
   background-size: 20px 12.76px;
