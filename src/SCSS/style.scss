@@ -1,14 +1,15 @@
 @import "null.scss";
 @import url('/src/assets/fonts/Prosto/Prosto.ttf');
 
-/* ---- reset ---- */  canvas{ display: block; vertical-align:bottom; }
- /* ---- particles.js container ---- */ #particles-js{ z-index: -6; position:fixed;  width: 100%; height: 100vh;  background-color: rgba(24, 24, 24, 1);  } 
- /* ---- stats.js ---- */ .count-particles{ background: rgba(45, 190, 150, 1); position: absolute; top: 48px; left: 0; width: 80px; color: rgba(45, 190, 150, 1); font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px;  } 
-
-
 /*-------------------------------HEADER---------------------------------*/
 html{
     scroll-behavior: smooth;
+   
+}
+body{
+    background: radial-gradient(rgba(20, 20, 20, 0.8), rgba(20, 20, 20, 0.9));
+
+
 }
 .container {
     max-width: 1590px;
@@ -243,6 +244,7 @@ html{
     color: #ffffff;
     font-style: normal;
     margin-top: 95px;
+    position: relative;
 }
 .section__breef-tille {
     font-family: 'Prosto';
@@ -265,6 +267,27 @@ html{
     flex-direction: column;
     row-gap: 36px;
 }
+.breef__title-details{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 147%;
+    max-width: 470px;
+    padding: 20px 16px;
+    border: 2px solid #2DBE96;
+    border-right: 0px;
+    border-radius: 20px 0px 0px 20px;
+    position: absolute;
+    right: -470px;
+    top:0px;
+    transition: all 0.3s ease 0s;
+    opacity: 0%;
+    
+}
+.breef__title-details-active{
+    right: 0px;
+    opacity: 100%;
+}
+
 
 .form__item-title {
     font-weight: 500;
@@ -285,9 +308,9 @@ html{
     line-height: 116%;
     color: rgba(255, 255, 255, 0.7);
     transition: all 0.3s ease 0s;
-    &:focus{
+    &:focus,
+    &:hover{
         border-bottom: 1px solid #2DBE96;
-
     }
 }
 .textarea__activity {
@@ -304,7 +327,8 @@ html{
     color: rgba(255, 255, 255, 0.7);
     height: 135px;
     transition: all 0.3s ease 0s;
-    &:focus{
+    &:focus,
+    &:hover{
         border: 1px solid #2DBE96;
         box-shadow: 0px 0px 10px #2DBE96;
     }
@@ -328,7 +352,8 @@ html{
     line-height: 116%;
     color: rgba(255, 255, 255, 0.7);
     transition: all 0.3s ease 0s;
-    &:focus{
+    &:focus,
+    &:hover{
         border-bottom: 1px solid #2DBE96;
 
     }
@@ -345,7 +370,8 @@ html{
     line-height: 116%;
     color: rgba(255, 255, 255, 0.7);
     transition: all 0.3s ease 0s;
-    &:focus{
+    &:focus,
+    &:hover{
         border-bottom: 1px solid #2DBE96;
     }
 
@@ -356,20 +382,19 @@ html{
     display: flex;
     justify-content: space-between;
     margin-top: 72px;
-    select{
-        option{
-            color: rgba(255, 255, 255, 0.7);
-            background-color: #383838;
-
-        }
-    }
+  
 }
 
-.form__options-select {
+
+.custom__dropdown{
+    position: relative;
+}
+
+.dropdown__button{
+    position: relative;
     cursor: pointer;
-    display: block; 
     background-color: #ffffff00;
-    font-size: 24px; 
+    font-size: 25px; 
     font-weight: 500; 
     color: rgba(255, 255, 255, 0.7);
     line-height: 28px; 
@@ -378,28 +403,79 @@ html{
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.7) ;
     appearance: none;
-    background-image: url('src/assets/img/select.png'); 
-    background-repeat: no-repeat;
-    background-position: 188px 16.43px;
-    background-size: 20px 12.76px;  
-    &:focus{
+    &::after{
+        content: url("/src/assets/img/select.png");
+        position: absolute;
+        width: 20px;
+        height: 12.76px;
+        right: 22px;
+        top: 6px;
+    }
+    transition: all 0.3s ease 0s;
+    &:focus,
+    &:hover{
+        color: #2DBE96;
         border: 1px solid #2DBE96;
         box-shadow: 0px 0px 10px #2DBE96;
     }
-
+}
+.dropdown__button-style{
+    width: 250px;
+}
+.dropdown__button-level{
+    width: 320px;
 }
 
-.options-select-levelanimation{
+.dropdown__list {
+    opacity: 0%;
+    visibility:hidden;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color:  rgb(43, 43, 43);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.7) ;
+    border-radius: 20px;
+    font-size: 24px; 
+    font-weight: 500; 
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 28px; 
+    padding: 12px 0px 12px 30px; 
     cursor: pointer;
-       width: 304px; 
-       background-position: 259px 16.43px;
-       transition: all 0.3s ease 0s;
-       &:focus{
-           border: 1px solid #2DBE96;
-           box-shadow: 0px 0px 10px #2DBE96;
-       }
+    transition: all 0.3s ease 0s;
+    &:hover {
+   
+        border: 1px solid #2DBE96;
+        box-shadow: 0px 0px 10px #2DBE96;
+    } 
+}
+
+.dropdown__list-item {
+    &:not(:first-child){
+        padding-top: 10px; 
+        
     }
+    transition: all 0.3s ease 0s;
+    &:hover {
+        color: #2DBE96;
+    } 
     
+}
+
+.dropdown__input{
+    display: none;
+}
+
+.dropdown__list-active{
+    opacity: 100%;
+    visibility: visible;
+    top: 50px;
+   
+}
+
+
 .options-color{
         cursor: pointer;
         position: relative;
@@ -413,31 +489,49 @@ html{
         border-radius: 20px;
         border: 1px solid rgba(255, 255, 255, 0.7) ;
         appearance: none;
-        background-image: url('src/assets/img/select.png'); 
+        background-image: url('/src/assets/img/select.png'); 
         background-repeat: no-repeat;
         background-position: 155px 16.43px;
         background-size: 20px 12.76px;  
-        &:focus{
+        transition: all 0.3s ease 0s;
+        &:focus,
+        &:hover{
+            color: #2DBE96;
             border: 1px solid #2DBE96;
             box-shadow: 0px 0px 10px #2DBE96;
     
         }
-    }   
-    
+        ::after{
+            content:"";
+            position: absolute;
+            width: 30px;
+            height: 27px;
+            border: 4px solid rgba(184, 184, 184, 0.7) ;
+            z-index: 4;
+            top: 0px;
+
+        }
+    }  
+       
+
 .input__color{
-        cursor: pointer;
         position: absolute;
-        top: 10px;
-        left: 100px;
-        width: 40px;
-        border: 1px solid #9c9c9c;
-        border-radius: 5px;
+        z-index: -4;
+        top: 8px;
+        left: 105px;
+        cursor: pointer;
+        width: 30px;
+        height: 27px;
+        
+       
+  
 }
 
 .breef__form-bottom{
     display: flex;
     column-gap: 21px;
     margin-top: 72px;
+
 }
 
 .breef__form-comment{
@@ -478,6 +572,7 @@ html{
 }
 
 .brief__form-attach {
+    width: 100%;
 }
 
 .form__item-title {
@@ -510,6 +605,11 @@ html{
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.7) ;
     margin-top: 16px;
+    &:hover {
+        color: #2DBE96;
+        border: 1px solid #2DBE96;
+        box-shadow: 0px 0px 10px #2DBE96;
+    } 
 }
 
 .file__expansion {
@@ -519,12 +619,70 @@ html{
     color: rgba(255, 255, 255, 0.7);
 }
 
-.file__preview {
-    display: inline-block;
-    max-width: 250px;
-    img{
-        max-width: 100px;
-    }
+.clearfile {
+    background-color: #ffffff00;
+    font-size: 24px; 
+    font-weight: 500; 
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 165px;
+    line-height: 28px;
+    text-align: center; 
+    padding: 7px 0px 7px 0px; 
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.7) ;
+    &:hover {
+        color: #2DBE96;
+        border: 1px solid #2DBE96;
+        box-shadow: 0px 0px 10px #2DBE96;
+    } 
+}
+
+.preview__files{
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: 18px; 
+    font-weight: 500; 
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 28px; 
+    height: 275px;
+    padding: 16px;
+    border-radius: 20px;
+    border: 1px solid #9c9c9c;
+    overflow-y: auto;
+
+}
+
+.breef__form-send {
+    margin-top: 72px;
+    margin-bottom: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.form__send-count {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #2DBE96;
+}
+
+.form__send-button {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.7) ;
+    text-align: center;
+    background-color: #ffffff00;
+    padding: 18px 0px;
+    width: 384px;
+    &:hover {
+        color: #2DBE96;
+        border: 1px solid #2DBE96;
+        box-shadow: 0px 0px 10px #2DBE96;
+    } 
+
 }
 
 /*--------------------------popup-----------------------------------------*/
@@ -693,3 +851,5 @@ html{
   
 
 
+
+  

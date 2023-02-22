@@ -24,7 +24,6 @@ if (alertButtonBurger){
     alertButtonBurger.addEventListener("click", function (){
         menuIcon.classList.remove("_active");
         headMenu.classList.remove("_actived");
-        alert.classList.toggle("_open-alert");
      });
 }
 }

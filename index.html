@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Inter:500,600" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Flex:regular" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script data-require="jquery" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
 
     <title>ABrosko</title>
 </head>
@@ -43,77 +44,99 @@
                 </a>
                 <a href="#" class="button__order">Оформить заказ</a>
             </header>
-                  <section class="section__breef">
-                        <h1 class="section__breef-tille"><span>Бриф</span>-анкета</h1>
-                         <form action="#" class="breef__form" method="post" name="formbreef" enctype="multipart/form-data">
-                    <div class="breef__form-item">
-                        <label for="customer" class="form__item-title" >Заказчик:</label>
-                        <input tabindex="1" class="input__customer" type="text" id="customer" name="customername" value="" placeholder="Обязательно для заполнения*" > 
+            <section class="section__breef">
+                <h1 class="section__breef-tille"><span>Бриф</span>-анкета</h1>
+                    <div class="breef__title-details">
+                        Brief можно перевести с английского как «резюме» или «краткая сводка». Бриф-анкета описывает суть проекта и каких результатов ожидает заказчик.
                     </div>
-                     <div class="breef__form-item">
-                        <label for="activity" class="form__item-title" >Вид деятельности компании и <span>ЦА:</span></label>
-                        <textarea tabindex="2" class="textarea__activity" name="detailsactivity" id="activity"   placeholder="Обязательно для заполнения*"></textarea>
-                    </div>
-                                    <div class="contacts__customer">
-                        <label for="contactcustomer" class="form__item-title" >Контакты заказчика:</label>
-                        <div class="contacts__customer-item">
-                            <input tabindex="3" class="input__email" type="text" id="contactcustomer" name="customeremail" value="" placeholder="Email*" > 
-                            <input tabindex="4" class="input__tel" type="tel" id="contactcustomer" maxlength="11" name="customertel" value="" placeholder="Номер телефона" > 
+                    <form action="breefform.php" id="form" class="breef__form" method="post" name="formbreef" enctype="multipart/form-data">
+                        <input type="hidden" name="admin_email[]" value="zhelonkinaleksei2710@gmail.com">
+                        <div class="breef__form-item">
+                            <label for="customer" class="form__item-title" >Заказчик:</label>
+                            <input required tabindex="1" class="input__customer" type="text" id="customer" name="customername" value="" placeholder="Обязательно для заполнения*" > 
                         </div>
-                    </div>
-                             <div class="breef__form-options">
-                        <select tabindex="5" name="typofservices" class="form__options-select"  >
-                            <option value="" hidden disabled selected > Виды услуг</option>
-                            <option value="1">Вёрстка</option>
-                            <option value="2">Дизайн</option>
-                            <option value="3">Логотип</option>
-                            <option value="4">Копирайтинг</option>
-                            <option value="5">CMS</option>
-                        </select>
-                        <select tabindex="6" name="styleanimation" class="form__options-select " >
-                            <option value="" hidden disabled selected >Выбор стиля</option>
-                            <option value="1">Минимализм</option>
-                            <option value="2">Креатив</option>
-                            <option value="3">Анимации</option>
-                            <option value="4">Паралакс</option>
-                        </select>
-                        <select tabindex="7" name="levelanimation" class="form__options-select options-select-levelanimation" >
-                            <option value="" hidden disabled selected >Уровень анимаций</option>
-                            <option value="1">Простые</option>
-                            <option value="2">Средние</option>
-                            <option value="3">Сложные</option>
-                            <option value="4">Проф. уровень</option>
-                        </select>
-                        <div class="options-color"> Цвет
-                                <input tabindex="8" class="input__color" type="color" id="colorchoose" name="colorchoose" value="" >
-                            </select>
-                        </div>    
-                    </div>
-                            <div class="breef__form-bottom">
-                        <div class="breef__form-comment">
-                            <label for="breefcomment" class="form__item-title" >Комментарий к заказу:</label>
-                            <div class="counter-box">
-                                <textarea tabindex="9" maxlength="1000" class="textarea__comment" name="breefcomment" id="breefcomment"   placeholder="Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat."></textarea>
-                                <span class="counter-text">
-                                    <span class="counter-text__current">0</span>
-                                    /
-                                    <span class="counter-text__total">1000 Символов</span>
-                                </span>
+                        <div class="breef__form-item">
+                            <label for="activity" class="form__item-title" >Вид деятельности компании и <span>ЦА:</span></label>
+                            <textarea required tabindex="2" class="textarea__activity" name="detailsactivity" id="activity"   placeholder="Обязательно для заполнения*"></textarea>
+                         </div>
+                        <div class="contacts__customer">
+                            <label for="contactcustomer" class="form__item-title" >Контакты заказчика:</label>
+                            <div class="contacts__customer-item">
+                                <input data-validate-field="email" tabindex="3" class="input__email form__control" type="text" id="contactcustomer" name="customeremail" value="" placeholder="Email*" > 
+                                <input data-validate-field="tel" tabindex="4" class="input__tel" type="tel" id="contactcustomer" maxlength="11" name="customertel" value="" placeholder="Номер телефона" > 
+                            </div>
+                        </div>
+                        <div class="breef__form-options">
+                            <div class="custom__dropdown">
+                                <div tabindex="5" class="dropdown__button">Виды услуг</div>
+                                <ul class="dropdown__list">
+                                    <li class="dropdown__list-item" data-value="layout">Вёрстка</li>
+                                    <li class="dropdown__list-item" data-value="design" >Дизайн</li>
+                                    <li class="dropdown__list-item" data-value="logo">Логотип</li>
+                                    <li class="dropdown__list-item" data-value="copyright">Копирайтинг</li>
+                                    <li class="dropdown__list-item" data-value="cms">CMS</li>
+                                </ul>
+                                <input class="dropdown__input" type="text" name="typofservices" value=" ">
                             </div>    
-                        </div> 
-                        <div class="brief__form-attach">
-                            <label for="breefattach" class="form__item-title" >Закрепленные файлы:</label>
-                            <div class="input__attach">   
-                                <input class="input__attach-standart" type="file" id="breefattach" name="breefattach" multiple accept=".txt .pdf .word .png .jpg">
-                                <div class="file__button">Прикрепить файл +</div>
-                                <div class="file__expansion">*  txt, pdf, word, png, jpg</div>
+                            <div class="custom__dropdown">
+                                <div tabindex="6" class="dropdown__button dropdown__button-style">Выбор стиля</div>
+                                <ul class="dropdown__list ">
+                                    <li class="dropdown__list-item" data-value="layout">Минимализм</li>
+                                    <li class="dropdown__list-item" data-value="design" >Креатив</li>
+                                    <li class="dropdown__list-item" data-value="logo">Анимации</li>
+                                    <li class="dropdown__list-item" data-value="copyright">Паралакс</li>
+                                </ul>
+                                <input class="dropdown__input" type="text" name="style" value=" ">
+                            </div>  
+                            <div class="custom__dropdown">
+                                <div tabindex="7" class="dropdown__button dropdown__button-level">Уровень анимаций</div>
+                                <ul class="dropdown__list ">
+                                    <li class="dropdown__list-item" data-value="layout">Простые</li>
+                                    <li class="dropdown__list-item" data-value="design" >Средние</li>
+                                    <li class="dropdown__list-item" data-value="logo">Сложные</li>
+                                    <li class="dropdown__list-item" data-value="copyright">Проф. уровень</li>
+                                </ul>
+                                <input class="dropdown__input" type="text" name="levelanimation" value="">
+                            </div>
+                            <div class="options-color"> Цвет
+                                    <input tabindex="8" class="input__color" type="color" id="colorchoose" name="colorchoose" value="" >
+                            </div>
+                        </div>    
+                        <div class="breef__form-bottom">
+                            <div class="breef__form-comment">
+                                <label for="breefcomment" class="form__item-title" >Комментарий к заказу:</label>
+                                <div class="counter-box">
+                                    <textarea required tabindex="9" maxlength="1000" class="textarea__comment" name="breefcomment" id="breefcomment"   placeholder="Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat."></textarea>
+                                    <span class="counter-text">
+                                        <span class="counter-text__current">0</span>
+                                        /
+                                        <span class="counter-text__total">1000 Символов</span>
+                                    </span>
+                                </div>    
                             </div> 
-                            <div id="filepreview" class="file__preview"></div>
-                        </div>  
-                    </div>
-                </form>
+                            <div class="brief__form-attach">
+                                <label for="breefattach" class="form__item-title" >Закрепленные файлы:</label>
+                                <div class="input__attach">   
+                                    <input class="input__attach-standart"   type="file" id="breefattach" name="breefattach" multiple accept=".txt .pdf .word .png .jpg .jpeg">
+                                    <div id="filebutton" class="file__button">Прикрепить файл +</div>
+                                    <div class="file__expansion">*  txt, pdf, word, png, jpg</div>
+                                </div>
+                                 <div class="preview__files" id="previewfiles"></div>
+                                 <div class="clearfile">Очистить</div>
+                            </div>  
+                        </div>
+                        <div class="breef__form-send">
+                            <div class="form__send-count">
+                                <span class="counter-file">Вес закрепленных файлов
+                                    <span class="counter-file__current">0</span>
+                                    Мб/
+                                    <span class="counter-file__total">1Гб</span>
+                                </span>
+                            </div>
+                            <button class="form__send-button  "  type="submit">Отправить анкету</button>
+                        </div>
+                    </form>
             </section>
-
             <div id="popup" class="popup">
                 <div class="popup__body">
                     <div class="popup__form">
@@ -147,16 +170,18 @@
                     </div>
                 </div>
             </div> 
-        </div>
-      
+            
+        </div>    
 <script src="src/JS/burger.js"></script>
+<script src="src/JS/form.js"></script>
+<script src="src/JS/breefinfo.js"></script>
+<script src="src/JS/dropdown.js"></script>
 <script src="src/JS/filepreview.js"></script>
 <script src="src/JS/countwords.js"></script>
 <script src="src/JS/click.js"></script>
 <script src="src/JS/popup.js"></script>
 <script src="src/JS/alert.js"></script>
-<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
-<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
-<script src="src/JS/particles.js"></script>
+<script data-require="jquery" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 </body>
 </html>
