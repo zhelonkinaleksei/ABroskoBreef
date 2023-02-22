@@ -341,9 +341,9 @@ a {
 .error {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  -webkit-box-shadow: 0px 0px 7px #750101;
-          box-shadow: 0px 0px 7px #750101;
-  color: #750101;
+  -webkit-box-shadow: 0px 0px 20px #a30f0f;
+          box-shadow: 0px 0px 20px #a30f0f;
+  border-radius: 20px;
 }
 
 .breef__form-item {
@@ -747,6 +747,7 @@ a {
 }
 
 .clearfile {
+  cursor: pointer;
   background-color: rgba(255, 255, 255, 0);
   font-size: 24px;
   font-weight: 500;
@@ -1849,6 +1850,9 @@ a {
   -webkit-column-gap: 36px;
      -moz-column-gap: 36px;
           column-gap: 36px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .social__item {

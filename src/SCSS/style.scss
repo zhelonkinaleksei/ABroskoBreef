@@ -244,8 +244,9 @@
 }
 .error{
     transition: all 0.3s ease 0s;
-    box-shadow: 0px 0px 7px #750101;
-    color: #750101;
+    box-shadow: 0px 0px 20px  #a30f0f;
+    border-radius: 20px;
+
 }
 .breef__form-item {
     margin-bottom: 72px;
@@ -609,6 +610,7 @@
 }
 
 .clearfile {
+    cursor: pointer;
     background-color: #ffffff00;
     font-size: 24px; 
     font-weight: 500; 
@@ -1521,9 +1523,7 @@
         column-gap: 20px;
 
     }
-    .custom__dropdown{
-
-    }
+ 
     .dropdown__button{
         flex: 1 1 50%;
         font-size: 11px; 
@@ -1768,6 +1768,7 @@
     display: flex;
     justify-content: space-between;
     column-gap: 36px;
+    align-items: center;
 }
 .social__item {
     width: 35px;
