@@ -13,175 +13,185 @@
 
     <title>ABrosko</title>
 </head>
-<body> 
-    <div id="particles-js"></div> 
-        <div class="container">
-            <header class="header">
-                <nav class="header__nav">
-                    <ul>
-                        <li>
-                            <a href="#">Главная</a>
-                        </li>
-                        <li>
-                            <a href="#news">Новости</a>
-                        </li>
-                        <li>
-                            <a href="#">Услуги</a>
-                        </li>
-                        <li class="button__portfolio" >
-                            <a href="#">Портфолио</a>
-                        </li>
-                        <li class="button__order-innernav">
-                            <a  href="#">Оформить заказ</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="menu__icon">
-                    <span></span>
-                 </div> 
-                <a href="#" class="header__logo">
-                    <span>A</span>Brosko
-                </a>
-                <a href="#" class="button__order">Оформить заказ</a>
-            </header>
-            <section class="section__breef">
-                <h1 class="section__breef-tille"><span>Бриф</span>-анкета</h1>
-                    <div class="breef__title-details">
-                        Brief можно перевести с английского как «резюме» или «краткая сводка». Бриф-анкета описывает суть проекта и каких результатов ожидает заказчик.
-                    </div>
-                    <form action="breefform.php" id="form" class="breef__form" method="post" name="formbreef" enctype="multipart/form-data">
-                        <input type="hidden" name="admin_email[]" value="zhelonkinaleksei2710@gmail.com">
-                        <div class="breef__form-item">
-                            <label for="customer" class="form__item-title" >Заказчик:</label>
-                            <input required tabindex="1" class="input__customer" type="text" id="customer" name="customername" value="" placeholder="Обязательно для заполнения*" > 
-                        </div>
-                        <div class="breef__form-item">
-                            <label for="activity" class="form__item-title" >Вид деятельности компании и <span>ЦА:</span></label>
-                            <textarea required tabindex="2" class="textarea__activity" name="detailsactivity" id="activity"   placeholder="Обязательно для заполнения*"></textarea>
-                         </div>
-                        <div class="contacts__customer">
-                            <label for="contactcustomer" class="form__item-title" >Контакты заказчика:</label>
-                            <div class="contacts__customer-item">
-                                <input data-validate-field="email" tabindex="3" class="input__email form__control" type="text" id="contactcustomer" name="customeremail" value="" placeholder="Email*" > 
-                                <input data-validate-field="tel" tabindex="4" class="input__tel" type="tel" id="contactcustomer" maxlength="11" name="customertel" value="" placeholder="Номер телефона" > 
+    <body> 
+        <div class="page">
+            <div class="container">
+                    <header class="header">
+                        <nav class="header__nav">
+                            <ul>
+                                <li>
+                                    <a href="#">Главная</a>
+                                </li>
+                                <li>
+                                    <a href="#">Новости</a>
+                                </li>
+                                <li>
+                                    <a href="#">Услуги</a>
+                                </li>
+                                <li class="button__portfolio" >
+                                    <a href="#">Портфолио</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="menu__icon">
+                            <span></span>
+                        </div> 
+                        <a href="#" class="header__logo">
+                            <span>A</span>Brosko
+                        </a>
+                    </header>
+                    <section class="section__breef">
+                            <h1 class="section__breef-tille"><span>Бриф</span>-анкета</h1>
+                            <div class="breef__title-details">
+                                Brief можно перевести с английского как «резюме» или «краткая сводка». Бриф-анкета описывает суть проекта и каких результатов ожидает заказчик.
                             </div>
-                        </div>
-                        <div class="breef__form-options">
-                            <div class="custom__dropdown">
-                                <div tabindex="5" class="dropdown__button">Виды услуг</div>
-                                <ul class="dropdown__list">
-                                    <li class="dropdown__list-item" data-value="layout">Вёрстка</li>
-                                    <li class="dropdown__list-item" data-value="design" >Дизайн</li>
-                                    <li class="dropdown__list-item" data-value="logo">Логотип</li>
-                                    <li class="dropdown__list-item" data-value="copyright">Копирайтинг</li>
-                                    <li class="dropdown__list-item" data-value="cms">CMS</li>
-                                </ul>
-                                <input class="dropdown__input" type="text" name="typofservices" value=" ">
-                            </div>    
-                            <div class="custom__dropdown">
-                                <div tabindex="6" class="dropdown__button dropdown__button-style">Выбор стиля</div>
-                                <ul class="dropdown__list ">
-                                    <li class="dropdown__list-item" data-value="layout">Минимализм</li>
-                                    <li class="dropdown__list-item" data-value="design" >Креатив</li>
-                                    <li class="dropdown__list-item" data-value="logo">Анимации</li>
-                                    <li class="dropdown__list-item" data-value="copyright">Паралакс</li>
-                                </ul>
-                                <input class="dropdown__input" type="text" name="style" value=" ">
-                            </div>  
-                            <div class="custom__dropdown">
-                                <div tabindex="7" class="dropdown__button dropdown__button-level">Уровень анимаций</div>
-                                <ul class="dropdown__list ">
-                                    <li class="dropdown__list-item" data-value="layout">Простые</li>
-                                    <li class="dropdown__list-item" data-value="design" >Средние</li>
-                                    <li class="dropdown__list-item" data-value="logo">Сложные</li>
-                                    <li class="dropdown__list-item" data-value="copyright">Проф. уровень</li>
-                                </ul>
-                                <input class="dropdown__input" type="text" name="levelanimation" value="">
-                            </div>
-                            <div class="options-color"> Цвет
-                                    <input tabindex="8" class="input__color" type="color" id="colorchoose" name="colorchoose" value="" >
-                            </div>
-                        </div>    
-                        <div class="breef__form-bottom">
-                            <div class="breef__form-comment">
-                                <label for="breefcomment" class="form__item-title" >Комментарий к заказу:</label>
-                                <div class="counter-box">
-                                    <textarea required tabindex="9" maxlength="1000" class="textarea__comment" name="breefcomment" id="breefcomment"   placeholder="Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat."></textarea>
-                                    <span class="counter-text">
-                                        <span class="counter-text__current">0</span>
-                                        /
-                                        <span class="counter-text__total">1000 Символов</span>
-                                    </span>
-                                </div>    
-                            </div> 
-                            <div class="brief__form-attach">
-                                <label for="breefattach" class="form__item-title" >Закрепленные файлы:</label>
-                                <div class="input__attach">   
-                                    <input class="input__attach-standart"   type="file" id="breefattach" name="breefattach" multiple accept=".txt .pdf .word .png .jpg .jpeg">
-                                    <div id="filebutton" class="file__button">Прикрепить файл +</div>
-                                    <div class="file__expansion">*  txt, pdf, word, png, jpg</div>
+                            <form action="breefform.php" id="form" class="breef__form" method="post" name="formbreef" enctype="multipart/form-data">
+                                <input type="hidden" name="admin_email[]" value="zhelonkinaleksei2710@gmail.com">
+                                <div class="breef__form-item">
+                                    <label for="customer" class="form__item-title" >Заказчик:</label>
+                                    <input required tabindex="1" class="input__customer" type="text" id="customer" name="customername" value="" placeholder="Обязательно для заполнения*" > 
                                 </div>
-                                 <div class="preview__files" id="previewfiles"></div>
-                                 <div class="clearfile">Очистить</div>
-                            </div>  
-                        </div>
-                        <div class="breef__form-send">
-                            <div class="form__send-count">
-                                <span class="counter-file">Вес закрепленных файлов
-                                    <span class="counter-file__current">0</span>
-                                    Мб/
-                                    <span class="counter-file__total">1Гб</span>
-                                </span>
+                                <div class="breef__form-item">
+                                    <label for="activity" class="form__item-title" >Вид деятельности компании и <span>ЦА:</span></label>
+                                    <textarea required tabindex="2" class="textarea__activity" name="detailsactivity" id="activity"   placeholder="Обязательно для заполнения*"></textarea>
+                                </div>
+                                <div class="contacts__customer">
+                                    <label for="contactcustomer" class="form__item-title" >Контакты заказчика:</label>
+                                    <div class="contacts__customer-item">
+                                        <input data-validate-field="email" tabindex="3" class="input__email form__control" type="text" id="contactcustomer" name="customeremail" value="" placeholder="Email*" > 
+                                        <input data-validate-field="tel" tabindex="4" class="input__tel" type="tel" id="contactcustomer" maxlength="11" name="customertel" value="" placeholder="Номер телефона" > 
+                                    </div>
+                                </div>
+                                <div class="breef__form-options">
+                                    <div class="custom__dropdown">
+                                        <div tabindex="5" class="dropdown__button">Виды услуг</div>
+                                        <ul class="dropdown__list">
+                                            <li class="dropdown__list-item" data-value="layout">Вёрстка</li>
+                                            <li class="dropdown__list-item" data-value="design" >Дизайн</li>
+                                            <li class="dropdown__list-item" data-value="logo">Логотип</li>
+                                            <li class="dropdown__list-item" data-value="copyright">Копирайтинг</li>
+                                            <li class="dropdown__list-item" data-value="cms">CMS</li>
+                                            <li class="dropdown__list-item" data-value="seo">Продвижение</li>
+                                        </ul>
+                                        <input class="dropdown__input" type="text" name="typofservices" value=" ">
+                                    </div>    
+                                    <div class="custom__dropdown">
+                                        <div tabindex="6" class="dropdown__button dropdown__button-style">Выбор стиля</div>
+                                        <ul class="dropdown__list ">
+                                            <li class="dropdown__list-item" data-value="layout">Минимализм</li>
+                                            <li class="dropdown__list-item" data-value="design" >Креатив</li>
+                                            <li class="dropdown__list-item" data-value="logo">Анимации</li>
+                                            <li class="dropdown__list-item" data-value="copyright">Паралакс</li>
+                                        </ul>
+                                        <input class="dropdown__input" type="text" name="style" value=" ">
+                                    </div>  
+                                    <div class="custom__dropdown">
+                                        <div tabindex="7" class="dropdown__button dropdown__button-level">Уровень анимаций</div>
+                                        <ul class="dropdown__list ">
+                                            <li class="dropdown__list-item" data-value="layout">Простые</li>
+                                            <li class="dropdown__list-item" data-value="design" >Средние</li>
+                                            <li class="dropdown__list-item" data-value="logo">Сложные</li>
+                                            <li class="dropdown__list-item" data-value="copyright">Проф. уровень</li>
+                                        </ul>
+                                        <input class="dropdown__input" type="text" name="levelanimation" value="">
+                                    </div>
+                                    <div class="options-color"> Цвет
+                                            <input tabindex="8" class="input__color" type="color" id="colorchoose" name="colorchoose" value="" >
+                                    </div>
+                                </div>    
+                                <div class="breef__form-bottom">
+                                    <div class="breef__form-comment">
+                                        <label for="breefcomment" class="form__item-title" >Комментарий к заказу:</label>
+                                        <div class="counter-box">
+                                            <textarea required tabindex="9" maxlength="1000" class="textarea__comment" name="breefcomment" id="breefcomment"   placeholder="Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat."></textarea>
+                                            <span class="counter-text">
+                                                <span class="counter-text__current">0</span>
+                                                /
+                                                <span class="counter-text__total">1000 Символов</span>
+                                            </span>
+                                        </div>    
+                                    </div> 
+                                    <div class="brief__form-attach">
+                                        <label for="breefattach" class="form__item-title form__item-title-attach " >Закрепленные файлы:</label>
+                                        <div class="input__attach">   
+                                            <input class="input__attach-standart"   type="file" id="breefattach" name="breefattach" multiple accept=".txt .pdf .word .png .jpg .jpeg">
+                                            <div id="filebutton" class="file__button">Прикрепить файл +</div>
+                                            <div class="file__expansion">*  txt, pdf, word, png, jpg</div>
+                                        </div>
+                                        <div class="preview__files" id="previewfiles"></div>
+                                        <div class="clearfile">Очистить</div>
+                                    </div>  
+                                </div>
+                                <div class="breef__form-send">
+                                    <div class="form__send-count">
+                                        <span class="counter-file">Вес закрепленных файлов
+                                            <span class="counter-file__current">0</span>
+                                            Мб/
+                                            <span class="counter-file__total">1Гб</span>
+                                        </span>
+                                    </div>
+                                    <button class="form__send-button"  type="submit">Отправить анкету</button>
+                                </div>
+                            </form>
+                    </section>
+                    <div id="popup" class="popup">
+                        <div class="popup__body">
+                            <div class="popup__form">
+                                <div class="form__cancel">
+                                    <img src="src/assets/img/popup/cross.svg" alt="cancel">
+                                </div>
+                                <form action="#"  id="form" class="form__body">
+                                    <div class="form__title">Заполните форму</div>
+                                    <div class="form__subtitle">И мы с вами свяжемся</div>
+                                    <div class="form__input-body">
+                                        <input id="formName" type="text" name="Name" class="form__input " placeholder="Имя" >
+                                        <input id="formEmail" type="text" name="Email" class="form__input " placeholder="Input your Email" >
+                                        <input id="formTel" type="text" name="Tel" class="form__input " placeholder="79507239485" >
+                                        <textarea name="Message" id="formMessage" class="form__input" placeholder="Сообщение"></textarea>
+                                    </div>    
+                                    <button type="submit" class="form__button" >Отправить</button>
+                                </form>
                             </div>
-                            <button class="form__send-button  "  type="submit">Отправить анкету</button>
                         </div>
-                    </form>
-            </section>
-            <div id="popup" class="popup">
-                <div class="popup__body">
-                    <div class="popup__form">
-                        <div class="form__cancel">
-                            <img src="src/assets/img/popup/cross.svg" alt="cancel">
+                    </div>  
+                    <div id="alert" class="alert">
+                        <div class="alert__body">
+                            <div class="alert__content">
+                                <div class="alert__cancel">
+                                    <img src="src/assets/img/popup/cross.svg" alt="cancel">
+                                </div>
+                                <div class="alert__message">
+                                    <div class="alert__message-title">На сайте ведутся технические работы</div>
+                                    <div class="alert__message-subtitle">Приносим свои извинения!</div>
+                                </div>
+                            </div>
                         </div>
-                        <form action="#"  id="form" class="form__body">
-                            <div class="form__title">Заполните форму</div>
-                            <div class="form__subtitle">И мы с вами свяжемся</div>
-                            <div class="form__input-body">
-                                <input id="formName" type="text" name="Name" class="form__input " placeholder="Имя" >
-                                <input id="formEmail" type="text" name="Email" class="form__input " placeholder="Input your Email" >
-                                <input id="formTel" type="text" name="Tel" class="form__input " placeholder="79507239485" >
-                                <textarea name="Message" id="formMessage" class="form__input" placeholder="Сообщение"></textarea>
-                            </div>    
-                            <button type="submit" class="form__button" >Отправить</button>
-                        </form>
+                    </div> 
+                    <footer class="footer">
+                        <div class="footer__top">
+                            <div class="footer__logo">under</div>
+                            <div class="footer__information">
+                                <div class="footer__information-item">
+                                    <div class="information__item-title"></div>
+                                    <ul class="information__item-list" >
+                                        <li>
+                                            <a href="#" class="list__item"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                     </div>
-                </div>
+                    </footer>
+                    
             </div>  
-            <div id="alert" class="alert">
-                <div class="alert__body">
-                    <div class="alert__content">
-                        <div class="alert__cancel">
-                            <img src="src/assets/img/popup/cross.svg" alt="cancel">
-                        </div>
-                        <div class="alert__message">
-                            <div class="alert__message-title">На сайте ведутся технические работы</div>
-                            <div class="alert__message-subtitle">Приносим свои извинения!</div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-            
-        </div>    
-<script src="src/JS/burger.js"></script>
-<script src="src/JS/form.js"></script>
-<script src="src/JS/breefinfo.js"></script>
-<script src="src/JS/dropdown.js"></script>
-<script src="src/JS/filepreview.js"></script>
-<script src="src/JS/countwords.js"></script>
-<script src="src/JS/click.js"></script>
-<script src="src/JS/popup.js"></script>
-<script src="src/JS/alert.js"></script>
-<script data-require="jquery" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-</body>
+        </div>      
+        <script src="src/JS/burger.js"></script>
+        <script src="src/JS/form.js"></script>
+        <script src="src/JS/breefinfo.js"></script>
+        <script src="src/JS/dropdown.js"></script>
+        <script src="src/JS/filepreview.js"></script>
+        <script src="src/JS/countwords.js"></script>
+        <script src="src/JS/click.js"></script>
+        <script src="src/JS/alert.js"></script>
+    </body>
 </html>
