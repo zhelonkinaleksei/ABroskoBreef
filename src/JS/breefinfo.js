@@ -9,9 +9,3 @@ breefInfo.addEventListener('mouseout', function(){
     breefInfoDetails.classList.remove('breef__title-details-active')
 });
 
-breeInfoDetailsTwo.addEventListener('mouseover', function(){
-    breefInfoDetails.classList.add('breef__title-details-active')
-});
-breeInfoDetailsTwo.addEventListener('mouseout', function(){
-    breefInfoDetails.classList.remove('breef__title-details-active')
-});

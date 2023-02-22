@@ -9,8 +9,6 @@
     <link href="https://fonts.googleapis.com/css?family=Inter:500,600" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Flex:regular" rel="stylesheet" />
     <script data-require="jquery" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
-
     <title>ABrosko</title>
 </head>
     <body> 
@@ -45,21 +43,21 @@
                             <div class="breef__title-details">
                                 Brief можно перевести с английского как «резюме» или «краткая сводка». Бриф-анкета описывает суть проекта и каких результатов ожидает заказчик.
                             </div>
-                            <form action="breefform.php" id="form" class="breef__form" method="post" name="formbreef" enctype="multipart/form-data">
+                            <form action="#" id="form" class="breef__form" method="post" name="formbreef" enctype="multipart/form-data">
                                 <input type="hidden" name="admin_email[]" value="zhelonkinaleksei2710@gmail.com">
                                 <div class="breef__form-item">
                                     <label for="customer" class="form__item-title" >Заказчик:</label>
-                                    <input required tabindex="1" class="input__customer" type="text" id="customer" name="customername" value="" placeholder="Обязательно для заполнения*" > 
+                                    <input  tabindex="1" class="input__customer js-input" type="text" id="customer" name="customername" value="" placeholder="Обязательно для заполнения*" > 
                                 </div>
                                 <div class="breef__form-item">
                                     <label for="activity" class="form__item-title" >Вид деятельности компании и <span>ЦА:</span></label>
-                                    <textarea required tabindex="2" class="textarea__activity" name="detailsactivity" id="activity"   placeholder="Обязательно для заполнения*"></textarea>
+                                    <textarea  tabindex="2" class="textarea__activity js-textarea" name="detailsactivity" id="activity"   placeholder="Обязательно для заполнения*"></textarea>
                                 </div>
                                 <div class="contacts__customer">
                                     <label for="contactcustomer" class="form__item-title" >Контакты заказчика:</label>
                                     <div class="contacts__customer-item">
-                                        <input data-validate-field="email" tabindex="3" class="input__email form__control" type="text" id="contactcustomer" name="customeremail" value="" placeholder="Email*" > 
-                                        <input data-validate-field="tel" tabindex="4" class="input__tel" type="tel" id="contactcustomer" maxlength="11" name="customertel" value="" placeholder="Номер телефона" > 
+                                        <input data-validate-field="email" tabindex="3" class="input__email js-input js-input-email" type="text" id="contactcustomer" name="customeremail" value="" placeholder="Email*" > 
+                                        <input data-validate-field="tel" tabindex="4" class="input__tel js-input-phone" type="tel" id="contactcustomer" maxlength="11" name="customertel" value="" placeholder="Номер телефона" > 
                                     </div>
                                 </div>
                                 <div class="breef__form-options">
@@ -72,6 +70,7 @@
                                             <li class="dropdown__list-item" data-value="copyright">Копирайтинг</li>
                                             <li class="dropdown__list-item" data-value="cms">CMS</li>
                                             <li class="dropdown__list-item" data-value="seo">Продвижение</li>
+                                            <li class="dropdown__list-item" data-value="key">Под ключ</li>
                                         </ul>
                                         <input class="dropdown__input" type="text" name="typofservices" value=" ">
                                     </div>    
@@ -103,7 +102,7 @@
                                     <div class="breef__form-comment">
                                         <label for="breefcomment" class="form__item-title" >Комментарий к заказу:</label>
                                         <div class="counter-box">
-                                            <textarea required tabindex="9" maxlength="1000" class="textarea__comment" name="breefcomment" id="breefcomment"   placeholder="Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat."></textarea>
+                                            <textarea  tabindex="9" maxlength="1000" class="textarea__comment js-textarea" name="breefcomment" id="breefcomment"   placeholder="Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat.Логотип должен быть выполнен в стиле HI-Tech; Основной шрифт возьмем Montserrat."></textarea>
                                             <span class="counter-text">
                                                 <span class="counter-text__current">0</span>
                                                 /
@@ -112,9 +111,9 @@
                                         </div>    
                                     </div> 
                                     <div class="brief__form-attach">
-                                        <label for="breefattach" class="form__item-title form__item-title-attach " >Закрепленные файлы:</label>
+                                        <label for="breefattach" class="form__item-title  " >Закрепленные файлы:</label>
                                         <div class="input__attach">   
-                                            <input class="input__attach-standart"   type="file" id="breefattach" name="breefattach" multiple accept=".txt .pdf .word .png .jpg .jpeg">
+                                            <input class="input__attach-standart"   type="file" id="breefattach" name="breefattach" multiple >
                                             <div id="filebutton" class="file__button">Прикрепить файл +</div>
                                             <div class="file__expansion">*  txt, pdf, word, png, jpg</div>
                                         </div>
@@ -134,26 +133,80 @@
                                 </div>
                             </form>
                     </section>
-                    <div id="popup" class="popup">
-                        <div class="popup__body">
-                            <div class="popup__form">
-                                <div class="form__cancel">
-                                    <img src="src/assets/img/popup/cross.svg" alt="cancel">
-                                </div>
-                                <form action="#"  id="form" class="form__body">
-                                    <div class="form__title">Заполните форму</div>
-                                    <div class="form__subtitle">И мы с вами свяжемся</div>
-                                    <div class="form__input-body">
-                                        <input id="formName" type="text" name="Name" class="form__input " placeholder="Имя" >
-                                        <input id="formEmail" type="text" name="Email" class="form__input " placeholder="Input your Email" >
-                                        <input id="formTel" type="text" name="Tel" class="form__input " placeholder="79507239485" >
-                                        <textarea name="Message" id="formMessage" class="form__input" placeholder="Сообщение"></textarea>
-                                    </div>    
-                                    <button type="submit" class="form__button" >Отправить</button>
-                                </form>
+                    <footer class="footer">
+                        <div class="footer__top">
+                            <div class="footer__title">under</div>
+                            <div class="footer__information">
+                                    <div class="footer__information-item">
+                                        <div class="information__item-title">Information:</div>
+                                        <ul class="information__item-list" >
+                                            <li>
+                                                <a href="#" class="list__item">- User agreement</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="list__item">- Privacy policy</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="list__item">- Documents</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="list__item">- Rights and contracts</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="footer__information-item">
+                                        <div class="information__item-title">Contact’s:</div>
+                                        <ul class="information__item-list" >
+                                            <li>
+                                                <a href="#" class="list__item">- info@mail.ru</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="list__item">- info2@mail.ru</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="list__item">- 7 (999) 222-22-66</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="list__item">- Support service</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="footer__information-item">
+                                        <div class="information__item-title">Social:</div>
+                                        <ul class="information__item-list" >
+                                            <li>
+                                                <a href="#" class="list__item">- info.vk</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="list__item">- info.inst</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="list__item">- info.tg</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="list__item">- info.tw</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                             </div>
-                        </div>
-                    </div>  
+                        </div>     
+                        <div class="footer__down">
+                                <div class="footer__logo">
+                                    <img src="src/assets/img/footer/logo.svg" alt="footerlogo">
+                                </div>
+                                <div class="footer__social">
+                                    <a href="#" class="social__item">
+                                        <img src="src/assets/img/footer/vk.svg" alt="vk">
+                                    </a>
+                                    <a href="#" class="social__item">
+                                        <img src="src/assets/img/footer/mail.svg" alt="mail">
+                                    </a>
+                                    <a href="#" class="social__item">
+                                        <img src="src/assets/img/footer/inst.svg" alt="inst">
+                                    </a>
+                                </div>
+                        </div>                    
+                    </footer>
                     <div id="alert" class="alert">
                         <div class="alert__body">
                             <div class="alert__content">
@@ -167,26 +220,12 @@
                             </div>
                         </div>
                     </div> 
-                    <footer class="footer">
-                        <div class="footer__top">
-                            <div class="footer__logo">under</div>
-                            <div class="footer__information">
-                                <div class="footer__information-item">
-                                    <div class="information__item-title"></div>
-                                    <ul class="information__item-list" >
-                                        <li>
-                                            <a href="#" class="list__item"></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                    </div>
-                    </footer>
+
                     
             </div>  
         </div>      
         <script src="src/JS/burger.js"></script>
-        <script src="src/JS/form.js"></script>
+        <script src="src/JS/validate.js"></script>
         <script src="src/JS/breefinfo.js"></script>
         <script src="src/JS/dropdown.js"></script>
         <script src="src/JS/filepreview.js"></script>
