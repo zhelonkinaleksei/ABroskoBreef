@@ -1239,6 +1239,7 @@ a {
   }
   .form__send-count {
     font-size: 16px;
+    height: 28px;
   }
   .form__send-button {
     font-size: 16px;
@@ -1390,6 +1391,7 @@ a {
   }
   .form__send-count {
     font-size: 12px;
+    height: 24px;
   }
   .form__send-button {
     font-size: 12px;
@@ -1542,6 +1544,7 @@ a {
   }
   .form__send-count {
     font-size: 10px;
+    height: 20px;
   }
   .form__send-button {
     font-size: 10px;
@@ -1710,6 +1713,7 @@ a {
   }
   .form__send-count {
     font-size: 10px;
+    height: 20px;
   }
   .form__send-button {
     font-size: 10px;
