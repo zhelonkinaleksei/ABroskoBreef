@@ -64,6 +64,7 @@ let form = document.querySelector('.breef__form'),
         } else {
             inputEmail.classList.remove('error');
         }
+   
         
         function fileValidation() {
             let fileInput =
@@ -80,34 +81,35 @@ let form = document.querySelector('.breef__form'),
                 fileInput.value = '';
                 return false;
             }
-            form.onsubmit = async (e) =>{
-                e.preventDefault()
-                let formData = new FormData(form);
-                let xhr = new XMLHttpRequest();
-        
-                    xhr.onreadystatechange = function() {
-                        if (xhr.readyState === 4) {
-                            if (xhr.status === 200) {
-                                console.log('Отправлено');
-                            }
-                        }
-                    }
-        
-                    xhr.open('POST', 'formsend.php', true);
-                    xhr.send(formData);
-        
-                    form.reset();
-                    alert('Ваша форма отправлена, мы скоро с вами свяжемся, спасибо!');
-                    
-                    
-                    
-            }
+           
            
           
         }
-       
+        async (e) =>{
+            e.preventDefault(form)
+            let formData = new FormData(form);
+            let xhr = new XMLHttpRequest();
+    
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                            console.log('Отправлено');
+                        }
+                    }
+                }
+    
+                xhr.open('POST', 'formsend.php', true);
+                xhr.send(formData);
+    
+                form.reset();
+                alert('Ваша форма отправлена, мы скоро с вами свяжемся, спасибо!');
+                
+                
+                
+        }
  
     }
+    
 
   
   
