@@ -2127,3 +2127,7 @@ a {
 .alert__cancel img {
   width: 100%;
 }
+
+textarea {
+  resize: none;
+}

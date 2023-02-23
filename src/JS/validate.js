@@ -13,7 +13,7 @@ let form = document.querySelector('.breef__form'),
         return re.test(String(phone));
     }
 
-    form.onsubmit = function () {
+    form.onsubmit = function () { 
         let emailVal = inputEmail.value,
             phoneVal = inputPhone.value;
             emptyInputs = Array.from(formInputs).filter(input => input.value === '');
@@ -65,51 +65,50 @@ let form = document.querySelector('.breef__form'),
             inputEmail.classList.remove('error');
         }
         
-      
+        function fileValidation() {
+            let fileInput =
+                document.getElementById('breefattach');
+             
+            let filePath = fileInput.value;
+         
+            // Allowing file type
+            let allowedExtensions =
+    /(\.jpg|\.txt|\.pdf|\.word|\.png)$/i;
+             
+            if (!allowedExtensions.exec(filePath)) {
+                alert('Недопустимый тип файла');
+                fileInput.value = '';
+                return false;
+            }
+            form.onsubmit = async (e) =>{
+                e.preventDefault()
+                let formData = new FormData(form);
+                let xhr = new XMLHttpRequest();
+        
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === 4) {
+                            if (xhr.status === 200) {
+                                console.log('Отправлено');
+                            }
+                        }
+                    }
+        
+                    xhr.open('POST', 'formsend.php', true);
+                    xhr.send(formData);
+        
+                    form.reset();
+                    alert('Ваша форма отправлена, мы скоро с вами свяжемся, спасибо!');
+                    
+                    
+                    
+            }
+           
+          
+        }
+       
  
     }
 
-    function fileValidation() {
-        let fileInput =
-            document.getElementById('breefattach');
-         
-        let filePath = fileInput.value;
-     
-        // Allowing file type
-        let allowedExtensions =
-/(\.jpg|\.txt|\.pdf|\.word|\.png)$/i;
-         
-        if (!allowedExtensions.exec(filePath)) {
-            alert('Недопустимый тип файла');
-            fileInput.value = '';
-            return false;
-        }
-    }
-
-
-    form.onsubmit = async (e) =>{
-        e.preventDefault()
-        let formData = new FormData(form);
-        let xhr = new XMLHttpRequest();
-
-			xhr.onreadystatechange = function() {
-				if (xhr.readyState === 4) {
-					if (xhr.status === 200) {
-						console.log('Отправлено');
-					}
-				}
-			}
-
-			xhr.open('POST', 'formsend.php', true);
-			xhr.send(formData);
-
-			form.reset();
-            function scrollToTop (){
-                window.scroll({
-                    top: 0,
-                    left: 0,
-                    behavior: 'smooth'
-                  });
-                }
-            scrollToTop();
-    }
+  
+  
+    
