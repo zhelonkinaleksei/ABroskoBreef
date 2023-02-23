@@ -87,4 +87,21 @@ let form = document.querySelector('.breef__form'),
     }
 
 
-    form.onsubmit
+    form.onsubmit = async (e) =>{
+        e.preventDefault()
+        let formData = new FormData(form);
+        let xhr = new XMLHttpRequest();
+
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4) {
+					if (xhr.status === 200) {
+						console.log('Отправлено');
+					}
+				}
+			}
+
+			xhr.open('POST', 'mail.php', true);
+			xhr.send(formData);
+
+			form.reset();
+    }

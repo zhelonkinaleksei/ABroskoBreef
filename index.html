@@ -43,8 +43,9 @@
                             <div class="breef__title-details">
                                 Brief можно перевести с английского как «резюме» или «краткая сводка». Бриф-анкета описывает суть проекта и каких результатов ожидает заказчик.
                             </div>
-                            <form action="#" id="form" class="breef__form" method="post" name="formbreef" enctype="multipart/form-data">
+                            <form action="formsend.php" id="form" class="breef__form" method="post" name="formbreef" enctype="multipart/form-data">
                                 <input type="hidden" name="admin_email[]" value="zhelonkinaleksei2710@gmail.com">
+                                <input type="hidden" name="form_subject" value="Тема письма">
                                 <div class="breef__form-item">
                                     <label for="customer" class="form__item-title" >Заказчик:</label>
                                     <input  tabindex="1" class="input__customer js-input" type="text" id="customer" name="customername" value="" placeholder="Обязательно для заполнения*" > 
@@ -113,7 +114,7 @@
                                     <div class="brief__form-attach">
                                         <label for="breefattach" class="form__item-title  " >Закрепленные файлы:</label>
                                         <div class="input__attach">   
-                                            <input class="input__attach-standart" onchange="return fileValidation()"  type="file" id="breefattach" name="breefattach" multiple >
+                                            <input class="input__attach-standart" onchange="return fileValidation()"  type="file" id="breefattach" name="file[]" multiple >
                                             <div id="filebutton" class="file__button">Прикрепить файл +</div>
                                             <div class="file__expansion">*  txt, pdf, word, png, jpg</div>
                                         </div>
