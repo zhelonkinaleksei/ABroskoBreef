@@ -100,8 +100,16 @@ let form = document.querySelector('.breef__form'),
 				}
 			}
 
-			xhr.open('POST', 'mail.php', true);
+			xhr.open('POST', 'formsend.php', true);
 			xhr.send(formData);
 
 			form.reset();
+            function scrollToTop (){
+                window.scroll({
+                    top: 0,
+                    left: 0,
+                    behavior: 'smooth'
+                  });
+                }
+            scrollToTop();
     }
