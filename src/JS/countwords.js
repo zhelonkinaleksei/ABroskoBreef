@@ -8,7 +8,13 @@ const length = evt.target.value.length;
 counter.innerText = length;
 };
 
-function sizeInput(){
+
+
+
+
+let fileInputs = document.getElementById('breefattach');
+fileInputs.addEventListener('change', sizeInput);
+function sizeInput() {
     const counterSize = document.querySelector('.counter-size__current');
     const filesSize = document.querySelector('.input__attach-standart');
     const sumSize = filesSize.files[0];
@@ -19,4 +25,3 @@ function sizeInput(){
         counterSize.innerText = size.toFixed(2);
     };
 }
-

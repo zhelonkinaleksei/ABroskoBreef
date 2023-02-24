@@ -103,8 +103,6 @@ form.onsubmit = async function(e) {
         return false;
     }
    
-  
-  
 };
   
 
