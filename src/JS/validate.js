@@ -87,10 +87,10 @@ form.onsubmit = async function(e) {
     alert('Ваша форма отправлена, мы скоро с вами свяжемся, спасибо!');
   };
 
+  let fileInput = document.getElementById('breefattach');
+  fileInput.addEventListener('change', fileValidation);
   function fileValidation() {
-    let fileInput =
-        document.getElementById('breefattach');
-     
+
     let filePath = fileInput.value;
  
     // Allowing file type

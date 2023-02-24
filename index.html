@@ -114,7 +114,7 @@
                                     <div class="brief__form-attach">
                                         <label for="breefattach" class="form__item-title  " >Закрепленные файлы:</label>
                                         <div class="input__attach">   
-                                            <input class="input__attach-standart" onchange="return fileValidation()"  type="file" id="breefattach" name="file[]" multiple >
+                                            <input class="input__attach-standart" onchange="return sizeInput()"  type="file" id="breefattach" name="file[]" multiple >
                                             <div id="filebutton" class="file__button">Прикрепить файл +</div>
                                             <div class="file__expansion">*  txt, pdf, word, png, jpg</div>
                                         </div>
@@ -125,7 +125,7 @@
                                 <div class="breef__form-send">
                                     <div class="form__send-count">
                                         <span class="counter-file">Вес закрепленных файлов
-                                            <span class="counter-file__current">0</span>
+                                            <span class="counter-size__current">0</span>
                                             Мб/
                                             <span class="counter-file__total">1Гб</span>
                                         </span>
