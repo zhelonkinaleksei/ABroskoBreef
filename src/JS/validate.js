@@ -1,5 +1,4 @@
 
-
 form.onsubmit = async function(e) {
     e.preventDefault(); // Остановить стандартное поведение формы
     let form = document.querySelector('.breef__form'),
