@@ -1,5 +1,5 @@
 <?
-require_once 'src/PHPMailer/src/PHPMailer.php';
+require_once 'src\PHPMailer\src\PHPMailer.php';
 
 $admin_email = array();
 foreach ( $_POST["admin_email"] as $key => $value ) {
